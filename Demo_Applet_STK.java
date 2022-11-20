@@ -14,7 +14,7 @@ import sim.toolkit.ToolkitInterface;
 import sim.toolkit.ToolkitRegistry;
 
 /**
- * @author HarikrushnG
+ * @author trach99
  *
  */
 public class Demo_Applet_STK extends Applet implements ToolkitInterface, ToolkitConstants
@@ -26,9 +26,22 @@ public class Demo_Applet_STK extends Applet implements ToolkitInterface, Toolkit
 	private static byte[] menuId ={(byte) 0x00,(byte) 0x00,(byte) 0x00,(byte) 0x00,(byte) 0x00,(byte) 0x00,(byte) 0x00,(byte) 0x00,(byte) 0x00,(byte) 0x00};
 	
 	// Register
-	private static final byte[] mainMenu_1 = {(byte) 'C', (byte) 'a', (byte) 'l', (byte) 'l', (byte) ' ', (byte) 'c', (byte) 'e', (byte) 'n', (byte) 't', (byte) 'e', (byte) 'r'};
+	private static final byte[] mainMenu_1 = {(byte) 'R', (byte) 'e', (byte) 'g', (byte) 'i', (byte) 's', (byte) 't', (byte) 'e', (byte) 'r'};
 	// Login
-	private static final byte[] mainMenu_2 = {(byte) 'B', (byte) 'a', (byte) 'l', (byte) 'a', (byte) 'n', (byte) 'c', (byte) 'e', (byte) ' ', (byte) 'e', (byte) 'n', (byte) 'q', (byte) 'u', (byte) 'i', (byte) 'r', (byte) 'y'};
+	private static final byte[] mainMenu_2 = {(byte) 'L', (byte) 'o', (byte) 'g', (byte) 'i', (byte) 'n'};
+	// Logout
+	private static final byte[] mainMenu_3 = {(byte) 'L', (byte) 'o', (byte) 'g', (byte) 'o', (byte) 'u', (byte) 't'};
+	// Send monies
+	private static final byte[] mainMenu_4 = {(byte) 'S', (byte) 'e', (byte) 'n', (byte) 'd', (byte) ' ', (byte) 'M', (byte) 'o', (byte) 'n', (byte) 'e', (byte) 'y'};
+
+	//Login_Username
+	private static final byte[] secondMenu_1 = {(byte) 'L', (byte) 'o', (byte) 'g', (byte) 'i', (byte) 'n', (byte) ' ', (byte) 'v', (byte) 'i', (byte) 'a', (byte) ' ', (byte) 'U', (byte) 's', (byte) 'e', (byte) 'r', (byte) 'n', (byte) 'a', (byte) 'm', (byte) 'e'};
+	//Login_Mobile
+	private static final byte[] secondMenu_2 = {(byte) 'L', (byte) 'o', (byte) 'g', (byte) 'i', (byte) 'n', (byte) ' ', (byte) 'v', (byte) 'i', (byte) 'a', (byte) ' ', (byte) 'M', (byte) 'o', (byte) 'b', (byte) 'i', (byte) 'l', (byte) 'e', (byte) ' ', (byte) 'n', (byte) 'u', (byte) 'm', (byte) 'b', (byte) 'e',(byte) 'r'};
+	//Login_email
+	private static final byte[] secondMenu_3 = {(byte) 'L', (byte) 'o', (byte) 'g', (byte) 'i', (byte) 'n', (byte) ' ', (byte) 'v', (byte) 'i', (byte) 'a', (byte) ' ', (byte) 'e', (byte) 'm', (byte) 'a', (byte) 'i', (byte) 'l',(byte) ' ', (byte) 'i', (byte) 'd'};
+	//Login_UID
+	private static final byte[] secondMenu_4 = {(byte) 'L', (byte) 'o', (byte) 'g', (byte) 'i', (byte) 'n', (byte) ' ', (byte) 'v', (byte) 'i', (byte) 'a', (byte) ' ', (byte) 'U', (byte) 'I', (byte) 'D'};
 
 	// Enter your name
 	private static final byte[] getInput_Name = {(byte) 'E', (byte) 'n', (byte) 't', (byte) 'e', (byte) 'r', (byte) ' ', (byte) 'y', (byte) 'o', (byte) 'u', (byte) 'r', (byte) ' ', (byte) 'N', (byte) 'a', (byte) 'm', (byte) 'e'};
@@ -36,8 +49,24 @@ public class Demo_Applet_STK extends Applet implements ToolkitInterface, Toolkit
 	private static final byte[] getInput_PhoneNumber = {(byte) 'E', (byte) 'n', (byte) 't', (byte) 'e', (byte) 'r', (byte) ' ', (byte) 'y', (byte) 'o', (byte) 'u', (byte) 'r', (byte) ' ', (byte) 'M', (byte) 'o', (byte) 'b', (byte) 'i', (byte) 'l', (byte) 'e', (byte) ' ', (byte) 'n', (byte) 'u', (byte) 'm', (byte) 'b', (byte) 'e', (byte) 'r'};
 	// Enter the amount
 	private static final byte[] getInput_Amount = {(byte) 'E', (byte) 'n', (byte) 't', (byte) 'e', (byte) 'r', (byte) ' ', (byte) 't', (byte) 'h', (byte) 'e', (byte) ' ', (byte) 'a', (byte) 'm', (byte) 'o', (byte) 'u', (byte) 'n', (byte) 't'};
-	
-	private static final byte[] sendUSSD_AlphaId = {(byte) 'S', (byte) 'e', (byte) 'n', (byte) 'd', (byte) 'i', (byte) 'n', (byte) 'g', (byte) ' ', (byte) 'r', (byte) 'e', (byte) 'q', (byte) 'u', (byte) 'e', (byte) 's', (byte) 't', (byte) ' ', (byte) '.', (byte) '.', (byte) '.'};
+	// Enter the Destination username
+	private static final byte[] getInput_Destname = {(byte) 'E', (byte) 'n', (byte) 't', (byte) 'e', (byte) 'r', (byte) ' ', (byte) 'D', (byte) 'e', (byte) 's', (byte) 't', (byte) 'i', (byte) 'n', (byte) 'a', (byte) 't', (byte) 'i', (byte) 'o', (byte) 'n', (byte) ' ', (byte) 'U', (byte) 's', (byte) 'e', (byte) 'r', (byte) ' ', (byte) 'N', (byte) 'a', (byte) 'm', (byte) 'e'};
+	// Enter the Destination Mobile number
+	private static final byte[] getInput_Destmobile = {(byte) 'E', (byte) 'n', (byte) 't', (byte) 'e', (byte) 'r', (byte) ' ', (byte) 'D', (byte) 'e', (byte) 's', (byte) 't', (byte) 'i', (byte) 'n', (byte) 'a', (byte) 't', (byte) 'i', (byte) 'o', (byte) 'n', (byte) ' ', (byte) 'U', (byte) 's', (byte) 'e', (byte) 'r', (byte) ' ', (byte) 'M', (byte) 'o', (byte) 'b', (byte) 'i', (byte) 'l', (byte) 'e', (byte) 'N', (byte) 'u', (byte) 'm', (byte) 'b', (byte) 'e', (byte) 'r'};
+	// Enter the email
+	private static final byte[] getInput_Email = {(byte) 'E', (byte) 'n', (byte) 't', (byte) 'e', (byte) 'r', (byte) ' ', (byte) 'y', (byte) 'o', (byte) 'u', (byte) 'r', (byte) ' ', (byte) 'e', (byte) 'm', (byte) 'a', (byte) 'i', (byte) 'l', (byte) 'i', (byte) 'd'};
+
+	// Enter the UID
+	private static final byte[] getInput_Uid = {(byte) 'E', (byte) 'n', (byte) 't', (byte) 'e', (byte) 'r', (byte) ' ', (byte) 'y', (byte) 'o', (byte) 'u', (byte) 'r', (byte) ' ', (byte) 'U', (byte) 'I', (byte) 'D'};
+
+	// Enter the password
+	private static final byte[] getInput_Password = {(byte) 'E', (byte) 'n', (byte) 't', (byte) 'e', (byte) 'r', (byte) ' ', (byte) 't', (byte) 'h', (byte) 'e', (byte) ' ', (byte) 'p', (byte) 'a', (byte) 's', (byte) 's', (byte) 'w', (byte) 'o', (byte) 'r', (byte) 'd'};
+
+	// Re-Enter the password
+	private static final byte[] getInput_Repassword = {(byte) 'R', (byte) 'e', (byte) '-', (byte) 'E', (byte) 'n', (byte) 't', (byte) 'e', (byte) 'r', (byte) ' ', (byte) 't', (byte) 'h', (byte) 'e', (byte) ' ', (byte) 'p', (byte) 'a', (byte) 's', (byte) 's', (byte) 'w', (byte) 'o', (byte) 'r', (byte) 'd'};
+
+
+	//private static final byte[] sendUSSD_AlphaId = {(byte) 'S', (byte) 'e', (byte) 'n', (byte) 'd', (byte) 'i', (byte) 'n', (byte) 'g', (byte) ' ', (byte) 'r', (byte) 'e', (byte) 'q', (byte) 'u', (byte) 'e', (byte) 's', (byte) 't', (byte) ' ', (byte) '.', (byte) '.', (byte) '.'};
 	
 	private byte[] setUpCall = JCSystem.makeTransientByteArray((short) 3,JCSystem.CLEAR_ON_RESET);
 	private byte[] sendUSSD = JCSystem.makeTransientByteArray((short) 23,JCSystem.CLEAR_ON_RESET);
@@ -60,12 +89,6 @@ public class Demo_Applet_STK extends Applet implements ToolkitInterface, Toolkit
 		
 		menuId[0] = toolkitRegistry.initMenuEntry(mainMenu_1, (byte)0x00, (short)mainMenu_1.length, (byte)0x00, false, (byte)0x00, (byte)0x00);
 		menuId[1] = toolkitRegistry.initMenuEntry(mainMenu_2, (byte)0x00, (short)mainMenu_2.length, (byte)0x00, false, (byte)0x00, (byte)0x00);
-		menuId[2] = toolkitRegistry.initMenuEntry(mainMenu_3, (byte)0x00, (short)mainMenu_3.length, (byte)0x00, false, (byte)0x00, (byte)0x00);
-		menuId[3] = toolkitRegistry.initMenuEntry(mainMenu_4, (byte)0x00, (short)mainMenu_4.length, (byte)0x00, false, (byte)0x00, (byte)0x00);
-		menuId[4] = toolkitRegistry.initMenuEntry(mainMenu_5, (byte)0x00, (short)mainMenu_5.length, (byte)0x00, false, (byte)0x00, (byte)0x00);
-		menuId[5] = toolkitRegistry.initMenuEntry(mainMenu_6, (byte)0x00, (short)mainMenu_6.length, (byte)0x00, false, (byte)0x00, (byte)0x00);
-		menuId[6] = toolkitRegistry.initMenuEntry(mainMenu_7, (byte)0x00, (short)mainMenu_7.length, (byte)0x00, false, (byte)0x00, (byte)0x00);
-		menuId[7] = toolkitRegistry.initMenuEntry(mainMenu_8, (byte)0x00, (short)mainMenu_8.length, (byte)0x00, false, (byte)0x00, (byte)0x00);
 	}
 
 	/**
@@ -110,12 +133,25 @@ public class Demo_Applet_STK extends Applet implements ToolkitInterface, Toolkit
 			
 				if(menuId[0] == result)
 				{
-					//1333
-					setUpCall[0] = (byte)0x81;
-					setUpCall[1] = (byte)0x31;
-					setUpCall[2] = (byte)0x33;
-					
-					setUpCall(setUpCall,(byte)3);
+					result = getInput(getInput_Name,(short)getInput_Name.length, (short)0, (short)20);
+
+					if(result <= (byte)0x09)
+					{
+						sendUSSD[0] = (byte)'*';
+						sendUSSD[1] = (byte)'1';
+						sendUSSD[2] = (byte)'0';
+						sendUSSD[3] = (byte)'4';
+						sendUSSD[4] = (byte)'*';
+
+						ProactiveResponseHandler.getTheHandler().copyTextString(sendUSSD,(short)5);
+
+						sendUSSD[21] = (byte)'#';
+
+						sevenBitPackingSendUSSD [0] = (byte)0x0F;
+						short resultLength = sevenBitPacking(sendUSSD, (short) 0, sevenBitPackingSendUSSD, (short) 1, (short)22);
+
+						sendUSSD( sevenBitPackingSendUSSD, (short) ( resultLength + 1 ) );
+					}
 				}
 				else if(menuId[1] == result)
 				{
@@ -168,7 +204,7 @@ public class Demo_Applet_STK extends Applet implements ToolkitInterface, Toolkit
     						sendUSSD[4] = (byte)'*';
     						
     						ProactiveResponseHandler.getTheHandler().copyTextString(sendUSSD,(short)5);
-    						
+    						//13 because phone number length 8
     						sendUSSD[13] = (byte)'*';
     						
     						result = getInput(getInput_Amount,(short)getInput_Amount.length, (short)1, (short)3);
